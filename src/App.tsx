@@ -1,22 +1,26 @@
+// App.tsx
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import NavBar from './componenets/NavBar';
-import About from './componenets/About';
-import Courses from './componenets/Course';
-import Contact from './componenets/Contact';
-
+import { Route, Routes } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Home from './components/Home';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import './styles.css';
 
 const App: React.FC = () => {
   return (
-    <div>
+    <>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<h1>Welcome to MST Technological!</h1>} />
-        <Route path="/about" element={<About />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </div>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+    </>
   );
 };
 
